@@ -1,10 +1,10 @@
 ### `To Start Client` 
 
-npm run webpack
+npm run client
 
 ### `To Start Server`
 
-npm run dev
+npm run server
 
 ### `Demo`
 

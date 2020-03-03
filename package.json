@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js",
-    "webpack": "webpack -wd",
+    "server": "nodemon --exec babel-node src/Server/server.js",
+    "client": "webpack -wd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,6 +35,8 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }

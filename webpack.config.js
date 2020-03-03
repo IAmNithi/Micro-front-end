@@ -45,6 +45,10 @@ const Header = {
           }
         },
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
@@ -72,6 +76,10 @@ const Body = {
           }
         },
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
@@ -80,4 +88,35 @@ const Body = {
   }
 };
 
-module.exports = [Polyfill, Header, Body];
+const Footer = {
+  entry: {
+    Footer: ["./src/Client/Footer/index.js"]
+  },
+  output: {
+    path: path.resolve(__dirname, "build/Footer"),
+    filename: "[name].js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"]
+          }
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".json", ".wasm", ".mjs", "*"]
+  }
+};
+
+module.exports = [Polyfill, Header, Body, Footer];

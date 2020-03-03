@@ -1,12 +1,12 @@
 import express from "express";
 import compression from "compression";
-import ssr from "./routes/ssr";
+import home from "./routes/routes";
 const app = express();
 
 app.use(compression());
 app.use(express.static("build"));
 
-app.use("/", ssr);
+app.use("/", home);
 
 const port = process.env.PORT || 3000;
 app.listen(port, function listenHandler() {
