@@ -1,5 +1,3 @@
-import AboutMe from "../../Client/AboutMe/aboutMe";
-import Header from "../../Client/Header/header";
 import Footer from "../../Client/Footer/footer";
 import React from "react";
 import { renderToString } from "react-dom/server";
@@ -19,14 +17,6 @@ const theHtml = `
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-  <div id="header">
-  <div id="headerCmp">{{{headerCmp}}}</div>
-  <script src="Header/header.js" charset="utf-8"></script>
-  </div>
-  <div id="body">
-  <div id="aboutmeCmp">{{{aboutmeCmp}}}</div>
-  <script src="AboutMe/Aboutme.js" charset="utf-8"></script>
-  </div>
   <div id="footer">
   <div id="footerCmp">{{{footerCmp}}}</div>
   <script src="Footer/footer.js" charset="utf-8"></script>
@@ -40,13 +30,9 @@ const theHtml = `
   `;
 
   const hbsTemplate = hbs.compile(theHtml);
-  const headComp = renderToString(<Header />);
-  const aboutmeComp = renderToString(<AboutMe />);
-  const footerCmp = renderToString(<Footer />);
-  const aboutme = hbsTemplate({
-    headerCmp: headComp,
-    aboutmeCmp: aboutmeComp,
-    footerCmp: footerCmp
+  const footerComp = renderToString(<Footer />);
+  const footerComponent = hbsTemplate({
+    footerCmp: footerComp
   });
 
-  export default aboutme;
+  export default footerComponent;

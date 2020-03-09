@@ -3,6 +3,7 @@ import Home from './home';
 import AboutMe from './aboutme';
 import HeaderComponent from './header';
 import BodyComponent from './body';
+import footerComponent from './footer';
 
 const router = express.Router();
 
@@ -10,20 +11,20 @@ router.get("/", async (req, res) => {
   res.send(Home);
 });
 
-router.get("/aboutme", async (req, res) => {
+router.get("/about", async (req, res) => {
   res.send(AboutMe);
 });
 
-router.get("/header", async (req, res) => {
+router.get("/headerComponent", async (req, res) => {
   res.send(HeaderComponent);
 });
 
-router.get("/body", async (req, res) => {
+router.get("/bodyComponent", async (req, res) => {
   res.send(BodyComponent);
 });
 
-router.get("/footer", async (req, res) => {
-  res.send(AboutMe);
+router.get("/footerComponent", async (req, res) => {
+  res.send(footerComponent);
 });
 
 export default router;

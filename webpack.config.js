@@ -119,4 +119,35 @@ const Footer = {
   }
 };
 
-module.exports = [Polyfill, Header, Body, Footer];
+const AboutMe = {
+  entry: {
+    Aboutme: ["./src/Client/AboutMe/index.js"]
+  },
+  output: {
+    path: path.resolve(__dirname, "build/AboutMe"),
+    filename: "[name].js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"]
+          }
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".json", ".wasm", ".mjs", "*"]
+  }
+};
+
+module.exports = [Polyfill, Header, Body, Footer, AboutMe];
