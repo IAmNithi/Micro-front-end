@@ -1,9 +1,9 @@
-import Body from "../../Client/Body/body";
-import React, { Component } from "react";
+import Header from "../../Client/Header/header";
+import React from "react";
 import { renderToString } from "react-dom/server";
 import hbs from "handlebars";
 
-const theHtml = `
+const headerHtml = `
   <html>
   <head>
   <title>Micro Front Ends</title>
@@ -17,9 +17,9 @@ const theHtml = `
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-  <div id="body">
-  <div id="bodyCmp">{{{bodyCmp}}}</div>
-  <script src="Body/body.js" charset="utf-8"></script>
+  <div id="header">
+  <div id="headerCmp">{{{headerCmp}}}</div>
+  <script src="Header/header.js" charset="utf-8"></script>
   </div>
   <script src="vendor.js" charset="utf-8"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -29,10 +29,10 @@ const theHtml = `
   </html>
   `;
 
-  const hbsTemplate = hbs.compile(theHtml);
-  const bodyComp = renderToString(<Body />);
-  const Component = hbsTemplate({
-    bodyCmp: bodyComp
+  const hbsTemplate = hbs.compile(headerHtml);
+  const headerComp = renderToString(<Header />);
+  const headerComponent = hbsTemplate({
+    headerCmp: headerComp
   });
 
-  export default Component;
+  export default headerComponent;

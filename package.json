@@ -6,6 +6,7 @@
   "scripts": {
     "server": "nodemon --exec babel-node src/Server/server.js",
     "client": "webpack -wd",
+    "dev": "npm-run-all --parallel client server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "handlebars": "^4.7.3",
+    "npm-run-all": "^4.1.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
