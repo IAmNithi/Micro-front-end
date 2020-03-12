@@ -6,5 +6,5 @@ const files = [
   "./dist/angular-app/main-es5.js"
 ];
 
-concat(files, "../../../build/angularCard.js");
+concat(files, "../../../build/Body2/angularCard.js");
 console.log("File Generated");

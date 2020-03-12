@@ -40,7 +40,8 @@ const theHtml = `
 
   <div id="bodyCmp">{{{bodyCmp}}}</div>
   <script src="Body/body.js" charset="utf-8"></script>
-  <script src="angularCard.js" charset="utf-8"></script>
+  <div id="bodyAngularCmp">
+  <script src="Body2/angularCard.js" charset="utf-8"></script>
   <div id="reactHolder" style="
     position: relative;
     width:15%;
@@ -57,7 +58,7 @@ const theHtml = `
   </div>
   <app-pricing style="display:block;background:#F0F0F0"></app-pricing>
   </div>
-  
+  </div>
   <div id="footer">
   <div id="footerCmp">{{{footerCmp}}}</div>
   <script src="Footer/footer.js" charset="utf-8"></script>
